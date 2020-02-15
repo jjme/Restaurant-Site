@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<!--
+    Name: Jaime M 
+    Date Created: 2/10/2020
+    Most recent revision:
+-->
+<html lang="en"> 
+    <head> 
+        <title>Peru Dine Contact</title>	
+    </head> 
+    
+    <body>
+        <header>
+            <h1>Peru Dine</h1>
+        </header>
+
+        <nav>
+            <hr />
+            <p><a href="home.html">Home</a></p>
+            <p></p><a href="menu.html">Menu</a></p>
+            <p></p><a href="contact.html">Contact Us</a></p>
+            <hr />
+        </nav>
+
+        <form action="submit.html" method="POST">
+            <!-- Textboxs for name, email, phone -->
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" /><br /><br />
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" /><br /><br />
+            <label for="phone">Phone: </label>
+            <input type="text" id="phone" name="phone" /><br /><br />
+
+            <!-- Dropdown menu for inquiry reason -->
+            <label for="inquiry">Reason for Inquiry: </label>
+            <select id="inquiry" name="inquiry">
+                <option value="catering">Catering</option>
+                <option value="privateParty">Private Party</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Oher</option>
+            </select>
+            <br /><br />
+            
+            <!-- Textarea for additional information -->
+            <label for="info">Additional Information: </label>
+            <textarea id="info" name="info" cols="50" rows="7"></textarea>
+            <br /><br />
+
+            <!-- Radio buttons for visited restaurant question -->
+            <label>Have you been to the restaurant: </label>
+            <input type="radio" id="no" name="been" value="no" />
+            <label for="no">No</label>
+            <input type="radio" id="yes" name="been" value="yes" />
+            <label for="yes">Yes</label>
+            <br /><br />
+
+            <!-- Checklist for contact days -->
+            <label>Best days to contact you: </label>
+            <input type="checkbox" id="monday" name="days" value="monday" />
+            <label for="monday">M</label>
+            <input type="checkbox" id="tuesday" name="days" value="tuesday" />
+            <label for="tuesday">Tu</label>
+            <input type="checkbox" id="wednesday" name="days" value="wednesday" />
+            <label for="wednesday">W</label>
+            <input type="checkbox" id="thursday" name="days" value="thursday" />
+            <label for="thursday">Th</label>
+            <input type="checkbox" id="friday" name="days" value="friday" />
+            <label for="friday">F</label>
+            <br /><br />
+
+            <!-- Submit button -->
+            <input type="button" name="submit" value="Submit" />
+        </form>
+
+
+        <footer>
+            <hr />
+            <p>1234 Main Street, Milwaukee, WI, 53202</p>
+            <p>414-555-5555</p>
+        </footer>
+    </body> 
+</html>
