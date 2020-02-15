@@ -6,7 +6,59 @@
 -->
 <html lang="en"> 
     <head> 
-        <title>Peru Dine Contact</title>	
+        <title>Peru Dine Contact</title>
+        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />	
+        <style> 
+            label {
+                font-size: 1.6em;
+            }
+
+            .required {
+                font-weight: bold;
+            }
+
+            input[type=text] {
+                border: 2px solid black;
+                width: 50%;
+                padding: 8px 8px;
+                margin: 12px 0;
+                box-sizing: border-box;
+                font-size: 1.1em;
+            }
+
+            select, textarea {
+                margin: 12px 0;
+                font-size: 1.3em;
+            }
+
+            textarea {
+                width: 99%;
+                height: 200px;
+                padding: 12px 20px;
+                margin: 12px 5px;
+                box-sizing: border-box;
+                border: 2px solid black;
+                border-radius: 3px;
+                background-color: white;
+                resize: vertical;
+            }
+
+            input[type=submit] {
+                font-size: 1.7em;
+                background-color: #007398;
+                color: #e8e8e8;
+                padding: 4px 8px;
+                margin-bottom: 8px;
+                margin: 25px auto 25px auto; 
+                display: block;
+            }
+
+            input[type=submit]:hover {
+                background-color: #0099d3;
+                color: #00151d;
+            }
+        </style>
     </head> 
     
     <body>
@@ -15,34 +67,33 @@
         </header>
 
         <nav>
-            <hr />
-            <p><a href="home.html">Home</a></p>
-            <p></p><a href="menu.html">Menu</a></p>
-            <p></p><a href="contact.html">Contact Us</a></p>
-            <hr />
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Us</a>
+            <div class="clearFloat"></div>
         </nav>
 
         <form action="submit.html" method="POST">
             <!-- Textboxs for name, email, phone -->
-            <label for="name">Name: </label>
+            <label for="name" class="required">Name: </label>
             <input type="text" id="name" name="name" /><br /><br />
-            <label for="email">Email: </label>
+            <label for="email" class="required">Email: </label>
             <input type="text" id="email" name="email" /><br /><br />
             <label for="phone">Phone: </label>
             <input type="text" id="phone" name="phone" /><br /><br />
 
             <!-- Dropdown menu for inquiry reason -->
-            <label for="inquiry">Reason for Inquiry: </label>
+            <label for="inquiry" class="required">Reason for Inquiry: </label>
             <select id="inquiry" name="inquiry">
                 <option value="catering">Catering</option>
                 <option value="privateParty">Private Party</option>
                 <option value="feedback">Feedback</option>
-                <option value="other">Oher</option>
+                <option value="other">Other</option>
             </select>
             <br /><br />
             
             <!-- Textarea for additional information -->
-            <label for="info">Additional Information: </label>
+            <label for="info" class="required">Additional Information: </label>
             <textarea id="info" name="info" cols="50" rows="7"></textarea>
             <br /><br />
 
@@ -66,10 +117,9 @@
             <label for="thursday">Th</label>
             <input type="checkbox" id="friday" name="days" value="friday" />
             <label for="friday">F</label>
-            <br /><br />
 
             <!-- Submit button -->
-            <input type="button" name="submit" value="Submit" />
+            <input type="submit" name="submit" value="Submit" />
         </form>
 
 

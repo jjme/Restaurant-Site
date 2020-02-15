@@ -1,0 +1,95 @@
+:root {
+    --color1: #e8e8e8;
+    --color2: #00151d;
+    --color3: #003051;
+    --color3l: #004675;
+    --color4: #007398;
+    --color5: #0099d3;
+    --color6: #27a2cf;
+    --color-bg: #d3dde0cc;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color2);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header, footer {
+    background-color: var(--color3);
+    color: var(--color5);
+    height: 100px;
+    text-align: center;
+    padding: 30px 10px 20px 10px;
+}
+
+/* nav */
+nav {
+    border-top: 5px solid; 
+    border-bottom: 5px solid;
+    margin-top: 4px;
+    background-color: var(--color4);
+}
+
+nav a {
+    background-color: var(--color3);
+    color: var(--color1);
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 20px;
+    width: 100px;
+    float: left;
+}
+
+nav :hover {
+    background-color: var(--color5);
+    font-weight: bold;
+}
+
+nav :visited {
+    background-color: var(--color3l);
+}
+/* nav end */
+
+.clearFloat {
+    clear: both;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 300%;
+}
+
+/* table */
+table, th, td {
+    border-collapse: collapse;
+    padding: 0px;
+}
+
+table {
+    border: 1px solid #000000;
+    width: 100%;
+    margin: auto;
+}
+
+tr {
+    height: 50px;
+}
+
+th {
+    background-color: var(--color3);
+    color: var(--color1);
+}
+
+td {
+    padding-left: 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--color6);
+}
+/* table end */

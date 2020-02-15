@@ -6,7 +6,20 @@
 -->
 <html lang="en"> 
     <head> 
-        <title>Peru Dine Menu</title>	
+        <title>Peru Dine Menu</title>
+        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />	
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />
+        <style> 
+            article {
+                float: left;
+                width: 330px;
+                margin: 20px;
+            }
+            .food-name {
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+        </style>
     </head> 
     
     <body>
@@ -15,42 +28,91 @@
         </header>
 
         <nav>
-            <hr />
-            <p><a href="home.html">Home</a></p>
-            <p><a href="menu.html">Menu</a></p>
-            <p><a href="contact.html">Contact Us</a></p>
-            <hr />
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Us</a>
+            <div class="clearFloat"></div>
         </nav>
 
         <section id="menu">
             <article id="menuBurgerFries">
-                <p><strong>Burger and Fries</strong><br />
-                An American Classic!<br />Your choice - with or withour cheese, pickle, onion, tomato, and lettuce<br/>Served with our famous thick cut french fries<br/>$7.95</p>
+                <p class="food-name">Burger and Fries</p>
+                <p>An American Classic!<br />
+                    Your choice - with or withour cheese, pickle, onion, tomato, and lettuce. 
+                    Served with our famous thick cut french fries.<br />$7.95</p>
             </article>
+
             <article id="menuHotdogChips">
-                <p><strong>Burger and Fries</strong><br />
-                -----------------<br />------------------------------------------------------------------------<br/>------------------------------------------------<br/>$7.95</p>
+                <p class="food-name">Hot Dog and Chips </p>
+                <p>A Summer Classic!<br />
+                    Your choice - white or wheat bun, relish, mustard, and ketchup. 
+                    Served with our house-made chips.<br />$7.95</p>
             </article>
+
             <article id="menuItalianSausagePeppers">
-                <p><strong>Burger and Fries</strong><br />
-                    -----------------<br />------------------------------------------------------------------------<br/>------------------------------------------------<br/>$10.95</p>
+                <p class="food-name">Italian Sausage and Peppers</p>
+                <p>An All-Time Favorite!<br />
+                    Your choice - mild or spicy cole slaw.
+                    Served with garlic mashers.<br />$10.95</p>
             </article>
+
+            <div class="clearFloat"></div>
+
             <article id="menuTenderloinSandwichChips">
-                <p><strong>Burger and Fries</strong><br />
-                    -----------------<br />------------------------------------------------------------------------<br/>------------------------------------------------<br/>$8.95</p>
+                <p class="food-name">Tenderloin Sandwich and Chips</p>
+                <p>Really Hits the Spot!<br />
+                    Plain or sesame seed bun, pickle, onion, tomato, and lettuce.
+                    Served with our house-made chips.<br />$8.95</p>
             </article>
+
             <article id="menuHouseSalad">
-                <p><strong>Burger and Fries</strong><br />
-                    -----------------<br />------------------------------------------------------------------------<br/>------------------------------------------------<br/>$6.95</p>
+                <p class="food-name">House Salad</p>
+                <p>On the Lighter Side.<br />
+                    Your choice - with or without cheese, iceberg lettuce, tomatoes, 
+                    peppers, Thousand Island or Ranch Dressing.
+                    Served with a dinner roll.<br />$6.95</p>
             </article>
+
             <article id="menuBrisketSandwichFries">
-                <p><strong>Burger and Fries</strong><br />
-                    -----------------<br />------------------------------------------------------------------------<br/>------------------------------------------------<br/>$7.95</p>
+                <p class="food-name">Brisket Sandwich and Fries</p>
+                <p>A Taste of Texas!<br />
+                    Smoked brisket on thick-cut, texas toast, cole slaw
+                    Served with our famous thick-cut french fries.<br />$7.95</p>
             </article>
+
+            <div class="clearFloat"></div>
+
+            <article>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">Beverages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Root Beer</td>
+                            <td>$3.00</td>
+                        </tr>
+                        <tr>
+                            <td>Bottled Water</td>
+                            <td>$1.25</td>
+                        </tr>
+                        <tr>
+                            <td>Lemonade</td>
+                            <td>$1.00</td>
+                        </tr>
+                        <tr>
+                            <td>Iced Tea</td>
+                            <td>$1.25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <div class="clearFloat"></div>
         </section>
 
         <footer>
-            <hr />
             <p>1234 Main Street, Milwaukee, WI, 53202</p>
             <p>414-555-5555</p>
         </footer>
