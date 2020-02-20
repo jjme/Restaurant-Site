@@ -1,132 +1,151 @@
 <!DOCTYPE html> 
 <!--
-    Name: Jaime M 
+    Name: jjme 
     Date Created: 2/10/2020
-    Most recent revision:
+    Most recent revision: 2/19/2020
 -->
 <html lang="en"> 
-    <head> 
-        <title>Peru Dine Contact</title>
-        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />	
-        <style> 
-            label {
-                font-size: 1.6em;
-            }
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            .required {
-                font-weight: bold;
-            }
+    <title>Peru Dine Contact</title>
 
-            input[type=text] {
-                border: 2px solid black;
-                width: 50%;
-                padding: 8px 8px;
-                margin: 12px 0;
-                box-sizing: border-box;
-                font-size: 1.1em;
-            }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />	
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />
 
-            select, textarea {
-                margin: 12px 0;
-                font-size: 1.3em;
-            }
+    <script src="https://kit.fontawesome.com/8e2e893e51.js" crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="scripts/restaurant.js"></script>
+</head> 
 
-            textarea {
-                width: 99%;
-                height: 200px;
-                padding: 12px 20px;
-                margin: 12px 5px;
-                box-sizing: border-box;
-                border: 2px solid black;
-                border-radius: 3px;
-                background-color: white;
-                resize: vertical;
-            }
-
-            input[type=submit] {
-                font-size: 1.7em;
-                background-color: #007398;
-                color: #e8e8e8;
-                padding: 4px 8px;
-                margin-bottom: 8px;
-                margin: 25px auto 25px auto; 
-                display: block;
-            }
-
-            input[type=submit]:hover {
-                background-color: #0099d3;
-                color: #00151d;
-            }
-        </style>
-    </head> 
-    
-    <body>
-        <header>
-            <h1>Peru Dine</h1>
+<body>
+    <div class="container">
+        <header class="jumbotron">
+            <h1 class="display-3">Peru Dine</h1>
+            <h4 class="font-italic">Eat Great, Live Great</h4>
+            <h5 class="text-right">NEW LOCATION OPENING SOON!</h5>
+            <p class="text-right">5678 Other Street, Milwaukee, WI, 53202</p>
         </header>
-
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact Us</a>
-            <div class="clearFloat"></div>
+    
+        <nav class="nav nav-pills nav-fill mb-4">
+            <li class="nav-item col-sm-4">
+                <a class="nav-link" href="home.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item col-sm-4">
+                <a class="nav-link" href="menu.html"><i class="fas fa-utensils"></i> Menu</a>
+            </li>
+            <li class="nav-item col-sm-4">
+                <a class="nav-item nav-link my-active" href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+            </li>
         </nav>
-
-        <form action="submit.html" method="POST">
-            <!-- Textboxs for name, email, phone -->
-            <label for="name" class="required">Name: </label>
-            <input type="text" id="name" name="name" /><br /><br />
-            <label for="email" class="required">Email: </label>
-            <input type="text" id="email" name="email" /><br /><br />
-            <label for="phone">Phone: </label>
-            <input type="text" id="phone" name="phone" /><br /><br />
-
+    
+        <form id="contactForm" name="contactForm" onsubmit="return validateItem();">
+            <!-- Textboxes for name, email, phone -->
+            <div class="form-group row">
+                <label for="name" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Name: </label>
+                <div class="col-md-6 col-xl-4">
+                    <input id="name" name="name" class="form-control" type="text" placeholder="Jay Doe"/>
+                </div> 
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Email: </label>
+                <div class="col-md-6 col-xl-4">
+                    <input id="email" name="email" class="form-control" type="text" placeholder="example@mail.com" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Phone: </label>
+                <div class="col-md-6 col-xl-4">
+                    <input id="phone" name="phone" class="form-control" type="text" placeholder="414-555-5555" />
+                </div>
+            </div>
+    
             <!-- Dropdown menu for inquiry reason -->
-            <label for="inquiry" class="required">Reason for Inquiry: </label>
-            <select id="inquiry" name="inquiry">
-                <option value="catering">Catering</option>
-                <option value="privateParty">Private Party</option>
-                <option value="feedback">Feedback</option>
-                <option value="other">Other</option>
-            </select>
-            <br /><br />
+            <div class="form-group row">
+                <label for="inquiry" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Reason for Inquiry: </label>
+                <div class="col-md-6 col-xl-4">
+                    <select id="inquiry" name="inquiry" class="form-control">
+                        <option value="catering">Catering</option>
+                        <option value="privateParty">Private Party</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
             
             <!-- Textarea for additional information -->
-            <label for="info" class="required">Additional Information: </label>
-            <textarea id="info" name="info" cols="50" rows="7"></textarea>
-            <br /><br />
-
+            <div class="form-group row">
+                <label for="info" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Additional Information: </label>
+                <div class="col-md-6 col-xl-4">
+                   <textarea id="info" name="info" class="form-control" rows="5"></textarea> 
+                </div>
+            </div>
+            
             <!-- Radio buttons for visited restaurant question -->
-            <label>Have you been to the restaurant: </label>
-            <input type="radio" id="no" name="been" value="no" />
-            <label for="no">No</label>
-            <input type="radio" id="yes" name="been" value="yes" />
-            <label for="yes">Yes</label>
-            <br /><br />
+            <div class="form-group row">
+                <label class="col-md-3 col-xl-4 d-flex justify-content-md-end">Have you been to the restaurant: </label>
+                <div class="col-md-6 col-xl-4">
+                    <div class="form-check form-check-inline">
+                        <input id="no" name="been" type="radio" value="no" />
+                        <label for="no" class="form-check-label">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input id="yes" name="been" type="radio" value="yes" />
+                        <label for="yes" class="form-check-label">Yes</label>
+                    </div>
+                </div>
+            </div>
 
             <!-- Checklist for contact days -->
-            <label>Best days to contact you: </label>
-            <input type="checkbox" id="monday" name="days" value="monday" />
-            <label for="monday">M</label>
-            <input type="checkbox" id="tuesday" name="days" value="tuesday" />
-            <label for="tuesday">Tu</label>
-            <input type="checkbox" id="wednesday" name="days" value="wednesday" />
-            <label for="wednesday">W</label>
-            <input type="checkbox" id="thursday" name="days" value="thursday" />
-            <label for="thursday">Th</label>
-            <input type="checkbox" id="friday" name="days" value="friday" />
-            <label for="friday">F</label>
-
+            <div class="form-group row">
+                <label class="col-md-3 col-xl-4 d-flex justify-content-md-end">Best days to contact you: </label>
+                <div class="col-md-6 col-xl-4">
+                    <div class="form-check form-check-inline">
+                        <input id="monday" name="days" class="form-check-input" type="checkbox" value="monday" />
+                        <label for="monday" class="form-check-label">M</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input id="tuesday" name="days" class="form-check-input" type="checkbox" value="tuesday" />
+                        <label for="tuesday" class="form-check-label">T</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input id="wednesday" name="days" class="form-check-input" type="checkbox" value="wednesday" />
+                        <label for="wednesday" class="form-check-label">W</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input id="thursday" name="days" class="form-check-input" type="checkbox" value="thursday" />
+                        <label for="thursday" class="form-check-label">Th</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input id="friday" name="days" class="form-check-input" type="checkbox" value="friday" />
+                        <label for="friday" class="form-check-label">F</label>
+                    </div>
+                </div>
+            </div>
+    
             <!-- Submit button -->
-            <input type="submit" name="submit" value="Submit" />
+            <div class="row">
+                <button id="btnSubmit" name="submit" type="submit" value="submit" class="btn btn-primary mx-auto">Send Request</button>
+            </div>          
         </form>
-
-
-        <footer>
-            <hr />
-            <p>1234 Main Street, Milwaukee, WI, 53202</p>
-            <p>414-555-5555</p>
+        
+        <footer class="footer">
+            <p class="text-center">1234 Main Street, Milwaukee, WI, 53202</p>
+            <p class="text-center">414-555-5555</p>
         </footer>
-    </body> 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+    crossorigin="anonymous"></script>
+</body> 
 </html>

@@ -1,120 +1,129 @@
 <!DOCTYPE html> 
 <!--
-    Name: Jaime M
+    Name: jjme
     Date Created: 2/10/2020
-    Most recent revision:
+    Most recent revision: 2/19/2020
 -->
 <html lang="en"> 
-    <head> 
-        <title>Peru Dine Menu</title>
-        <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />	
-        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />
-        <style> 
-            article {
-                float: left;
-                width: 330px;
-                margin: 20px;
-            }
-            .food-name {
-                font-weight: bold;
-                font-size: 1.2em;
-            }
-        </style>
-    </head> 
-    
-    <body>
-        <header>
-            <h1>Peru Dine</h1>
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Peru Dine Menu</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />	
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/8e2e893e51.js" crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="scripts/restaurant.js"></script>
+    <style>
+        .food-name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head> 
+
+<body>
+    <div class="container">
+        <header class="jumbotron">
+            <h1 class="display-3">Peru Dine</h1>
+            <h4 class="font-italic">Eat Great, Live Great</h4>
+            <h5 class="text-right">NEW LOCATION OPENING SOON!</h5>
+            <p class="text-right">5678 Other Street, Milwaukee, WI, 53202</p>
         </header>
-
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact Us</a>
-            <div class="clearFloat"></div>
+    
+        <nav class="nav nav-pills nav-fill mb-4">
+            <li class="nav-item col-sm-4">
+                <a class="nav-link" href="home.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item col-sm-4">
+                <a class="nav-link my-active" href="menu.html"><i class="fas fa-utensils"></i> Menu</a>
+            </li>
+            <li class="nav-item col-sm-4">
+                <a class="nav-item nav-link" href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+            </li>
         </nav>
-
-        <section id="menu">
-            <article id="menuBurgerFries">
+    
+        <section id="menu" class="row">
+            <article id="menuBurgerFries" class="col-md-6 col-xl-4">
                 <p class="food-name">Burger and Fries</p>
                 <p>An American Classic!<br />
                     Your choice - with or withour cheese, pickle, onion, tomato, and lettuce. 
                     Served with our famous thick cut french fries.<br />$7.95</p>
             </article>
-
-            <article id="menuHotdogChips">
+    
+            <article id="menuHotdogChips" class="col-md-6 col-xl-4">
                 <p class="food-name">Hot Dog and Chips </p>
                 <p>A Summer Classic!<br />
                     Your choice - white or wheat bun, relish, mustard, and ketchup. 
                     Served with our house-made chips.<br />$7.95</p>
             </article>
-
-            <article id="menuItalianSausagePeppers">
+    
+            <article id="menuItalianSausagePeppers" class="col-md-6 col-xl-4">
                 <p class="food-name">Italian Sausage and Peppers</p>
                 <p>An All-Time Favorite!<br />
                     Your choice - mild or spicy cole slaw.
                     Served with garlic mashers.<br />$10.95</p>
             </article>
-
-            <div class="clearFloat"></div>
-
-            <article id="menuTenderloinSandwichChips">
+    
+            <article id="menuTenderloinSandwichChips" class="col-md-6 col-xl-4">
                 <p class="food-name">Tenderloin Sandwich and Chips</p>
                 <p>Really Hits the Spot!<br />
                     Plain or sesame seed bun, pickle, onion, tomato, and lettuce.
                     Served with our house-made chips.<br />$8.95</p>
             </article>
-
-            <article id="menuHouseSalad">
+    
+            <article id="menuHouseSalad" class="col-md-6 col-xl-4">
                 <p class="food-name">House Salad</p>
                 <p>On the Lighter Side.<br />
                     Your choice - with or without cheese, iceberg lettuce, tomatoes, 
                     peppers, Thousand Island or Ranch Dressing.
                     Served with a dinner roll.<br />$6.95</p>
             </article>
-
-            <article id="menuBrisketSandwichFries">
+    
+            <article id="menuBrisketSandwichFries" class="col-md-6 col-xl-4">
                 <p class="food-name">Brisket Sandwich and Fries</p>
                 <p>A Taste of Texas!<br />
                     Smoked brisket on thick-cut, texas toast, cole slaw
                     Served with our famous thick-cut french fries.<br />$7.95</p>
-            </article>
-
-            <div class="clearFloat"></div>
-
-            <article>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="2">Beverages</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Root Beer</td>
-                            <td>$3.00</td>
-                        </tr>
-                        <tr>
-                            <td>Bottled Water</td>
-                            <td>$1.25</td>
-                        </tr>
-                        <tr>
-                            <td>Lemonade</td>
-                            <td>$1.00</td>
-                        </tr>
-                        <tr>
-                            <td>Iced Tea</td>
-                            <td>$1.25</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-            <div class="clearFloat"></div>
+            </article>  
         </section>
-
-        <footer>
-            <p>1234 Main Street, Milwaukee, WI, 53202</p>
-            <p>414-555-5555</p>
+        <section class="row">
+            <table class="col-10 col-md-6 col-xl-5 mx-auto">
+                <thead>
+                    <tr>
+                        <th colspan="2">Beverages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Root Beer</td>
+                        <td>$3.00</td>
+                    </tr>
+                    <tr>
+                        <td>Bottled Water</td>
+                        <td>$1.25</td>
+                    </tr>
+                    <tr>
+                        <td>Lemonade</td>
+                        <td>$1.00</td>
+                    </tr>
+                    <tr>
+                        <td>Iced Tea</td>
+                        <td>$1.25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    
+        <footer class="footer">
+            <p class="text-center">1234 Main Street, Milwaukee, WI, 53202</p>
+            <p class="text-center">414-555-5555</p>
         </footer>
-    </body> 
+    </div>
+</body> 
 </html>
