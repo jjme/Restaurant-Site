@@ -12,8 +12,8 @@
     <title>Peru Dine Contact</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-    crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />	
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet" />
 
@@ -24,6 +24,10 @@
 <body>
     <div class="container">
         <header class="jumbotron">
+            <noscript class="text-right">
+                <h6>Your Javascript is disabled!</h6>
+                <p>Our website is best viewed with JavaScript enabled.</p>
+            </noscript>
             <h1 class="display-3">Peru Dine</h1>
             <h4 class="font-italic">Eat Great, Live Great</h4>
             <h5 class="text-right">NEW LOCATION OPENING SOON!</h5>
@@ -32,40 +36,54 @@
     
         <nav class="nav nav-pills nav-fill mb-4">
             <li class="nav-item col-sm-4">
-                <a class="nav-link" href="home.html"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-link" href="home.html"><i class="fas fa-home mr-2"></i>Home</a>
             </li>
             <li class="nav-item col-sm-4">
-                <a class="nav-link" href="menu.html"><i class="fas fa-utensils"></i> Menu</a>
+                <a class="nav-link" href="menu.html"><i class="fas fa-utensils mr-2"></i>Menu</a>
             </li>
             <li class="nav-item col-sm-4">
-                <a class="nav-item nav-link my-active" href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                <a class="nav-link my-active" href="contact.html"><i class="fas fa-phone mr-2"></i>
+                    Contact Us</a>
             </li>
         </nav>
     
-        <form id="contactForm" name="contactForm" onsubmit="return validateItem();">
+        <form id="contactForm" name="contactForm" onsubmit="return validateItem();" novalidate>
             <!-- Textboxes for name, email, phone -->
             <div class="form-group row">
-                <label for="name" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Name: </label>
+                <label for="name" class="col-md-3 col-xl-4 col-form-label 
+                    d-flex justify-content-md-end font-weight-bold">Name:</label>
                 <div class="col-md-6 col-xl-4">
                     <input id="name" name="name" class="form-control" type="text" placeholder="Jay Doe"/>
+                    <div class="invalid-feedback">
+                        Please enter a name.
+                    </div>
                 </div> 
             </div>
             <div class="form-group row">
-                <label for="email" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Email: </label>
+                <label for="email" class="col-md-3 col-xl-4 col-form-label 
+                    d-flex justify-content-md-end font-weight-bold">Email:</label>
                 <div class="col-md-6 col-xl-4">
-                    <input id="email" name="email" class="form-control" type="text" placeholder="example@mail.com" />
+                    <input id="email" name="email" class="form-control" type="email" placeholder="example@mail.com" />
+                    <div class="invalid-feedback">
+                        Please enter a valid email.
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="phone" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Phone: </label>
+                <label for="phone" class="col-md-3 col-xl-4 col-form-label 
+                    d-flex justify-content-md-end">Phone:</label>
                 <div class="col-md-6 col-xl-4">
-                    <input id="phone" name="phone" class="form-control" type="text" placeholder="414-555-5555" />
+                    <input id="phone" name="phone" class="form-control" type="tel" placeholder="414-555-5555" />
+                    <div class="invalid-feedback">
+                        Please enter a valid phone number.
+                    </div>
                 </div>
             </div>
     
             <!-- Dropdown menu for inquiry reason -->
             <div class="form-group row">
-                <label for="inquiry" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Reason for Inquiry: </label>
+                <label for="inquiry" class="col-md-3 col-xl-4 col-form-label 
+                    d-flex justify-content-md-end font-weight-bold">Reason for Inquiry:</label>
                 <div class="col-md-6 col-xl-4">
                     <select id="inquiry" name="inquiry" class="form-control">
                         <option value="catering">Catering</option>
@@ -78,16 +96,21 @@
             
             <!-- Textarea for additional information -->
             <div class="form-group row">
-                <label for="info" class="col-md-3 col-xl-4 col-form-label d-flex justify-content-md-end">Additional Information: </label>
+                <label for="info" class="col-md-3 col-xl-4 col-form-label 
+                    d-flex justify-content-md-end text-right font-weight-bold">Additional Information:</label>
                 <div class="col-md-6 col-xl-4">
-                   <textarea id="info" name="info" class="form-control" rows="5"></textarea> 
+                   <textarea id="info" name="info" class="form-control" rows="5"></textarea>
+                   <div class="invalid-feedback">
+                       Please enter additional information.
+                    </div> 
                 </div>
             </div>
             
             <!-- Radio buttons for visited restaurant question -->
             <div class="form-group row">
-                <label class="col-md-3 col-xl-4 d-flex justify-content-md-end">Have you been to the restaurant: </label>
-                <div class="col-md-6 col-xl-4">
+                <label class="col-md-3 col-xl-4 d-flex justify-content-md-end text-right">
+                    Have you been to the restaurant:</label>
+                <div class="col">
                     <div class="form-check form-check-inline">
                         <input id="no" name="been" type="radio" value="no" />
                         <label for="no" class="form-check-label">No</label>
@@ -101,8 +124,9 @@
 
             <!-- Checklist for contact days -->
             <div class="form-group row">
-                <label class="col-md-3 col-xl-4 d-flex justify-content-md-end">Best days to contact you: </label>
-                <div class="col-md-6 col-xl-4">
+                <label class="col-md-3 col-xl-4 d-flex justify-content-md-end text-right font-weight-bold">
+                    Best days to contact you:</label> 
+                <div class="col">
                     <div class="form-check form-check-inline">
                         <input id="monday" name="days" class="form-check-input" type="checkbox" value="monday" />
                         <label for="monday" class="form-check-label">M</label>
@@ -122,13 +146,17 @@
                     <div class="form-check form-check-inline">
                         <input id="friday" name="days" class="form-check-input" type="checkbox" value="friday" />
                         <label for="friday" class="form-check-label">F</label>
+                        <div class="invalid-feedback" style="margin-left: 1em">
+                            Please choose 1 or more days.
+                        </div> 
                     </div>
                 </div>
             </div>
-    
+
             <!-- Submit button -->
             <div class="row">
-                <button id="btnSubmit" name="submit" type="submit" value="submit" class="btn btn-primary mx-auto">Send Request</button>
+                <button id="btnSubmit" name="submit" class="btn btn-primary mx-auto" type="submit" value="submit" >
+                    Send Request</button>
             </div>          
         </form>
         
@@ -139,13 +167,13 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
-    crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
-    crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-    crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+        crossorigin="anonymous"></script>
 </body> 
 </html>
